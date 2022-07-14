@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+<form th:object="${form}" method="post">
+  <div>
+    <label>상품명</label>
+    <input type="text" th:field="*{productName}">
+  </div>
+  <div>
+    <label>가격</label>
+    <input type="number" th:field="*{salePrice}">
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>

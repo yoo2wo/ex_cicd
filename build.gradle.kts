@@ -17,6 +17,9 @@ repositories {
 }
 
 dependencies {
+
+//	//DB
+//	implementation("mysql:mysql-connector-java")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
