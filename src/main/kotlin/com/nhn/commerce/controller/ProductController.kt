@@ -14,7 +14,7 @@ import kotlin.reflect.typeOf
 class ProductController(
     private val productService: ProductService,
 
-) {
+    ) {
     private val log = LoggerFactory.getLogger(javaClass)
 
     @GetMapping("/product")
@@ -29,7 +29,7 @@ class ProductController(
     @GetMapping("product/new")
     fun createProductForm(model: Model): String {
         model.addAttribute("form", ProductForm())
-        return "/createProduct"
+        return "createProduct"
     }
 
     private fun Int.isPositive():Boolean = this >= 0
@@ -74,14 +74,14 @@ class ProductController(
         val productForm = ProductForm(product?.productName, product?.salePrice)
         model.addAttribute("form", productForm);
         model.addAttribute("productNo", productNo)
-        return "/updateProduct"
+        return "updateProduct"
     }
 
 //    @PostMapping( "/product/{productNo}/edit")
 //    fun updateProduct(@PathVariable(name="productNo") productNo : Int, @ModelAttribute("form") productForm: ProductForm) : String {
 //        val product = Product(productNo = productNo, productName = productForm.productName, salePrice = productForm.salePrice?:0, registerYmdt = null, updateYmdt = null)
 //        productService.updateProduct(product)
-//        return "redirect:/product"
+//        return "redirect:product"
 //    }
 
     //default parameter 이용
